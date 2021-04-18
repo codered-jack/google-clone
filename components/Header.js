@@ -32,13 +32,14 @@ function Header() {
             type='text'
             className='flex-grow w-full focus:outline-none'
             ref={searchInputRef}
+            defaultValue={router.query.term}
           />
           <XIcon
             className='h-7 sm:mr-3 text-gray-500 cursor-pointer transition duration-100 transform hover:scale-125'
             onClick={() => (searchInputRef.current.value = '')}
           />
-          <MicrophoneIcon className='mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300' />
-          <SearchIcon className='h-6 text-blue-500 hidden sm:inline-flex' />
+          <MicrophoneIcon className='mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300 cursor-pointer' />
+          <SearchIcon className='h-6 text-blue-500 hidden sm:inline-flex cursor-pointer' onClick={search}/>
           <button hidden type='submit' onClick={search}>
             Search
           </button>
